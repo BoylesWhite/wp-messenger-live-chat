@@ -1,0 +1,96 @@
+@headerColor: #0084ff;
+
+#gon-messenger-container{
+  width:280px;
+  position:fixed;
+  bottom:0;
+  right:40px;
+  z-index:999;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.10), 0 3px 6px rgba(0,0,0,0.16);
+  #gon-messenger-header{
+    background-color:@headerColor;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    padding: 6px 10px;
+    svg.chat-icon{
+      display:inline-block;
+      height:18px;
+      width:auto;
+      margin-right:10px;
+      vertical-align: middle;
+    }
+    span{
+      font-size:14px;
+      line-height: 1em;
+      display: inline-block;
+      font-family:Arial;
+      color:white;
+      text-align: left;
+    }
+    #gon-toggle-button{
+      position: absolute;
+      right: 10px;
+      top: 12px;
+      width: 20px;
+      height: 20px;
+      opacity: 0.3;
+      transition: all 0.6s;
+      &:hover{
+        opacity: 1;
+      }
+      &.gon-close {
+        top: 8px;
+      }
+      &.gon-open:before, &.gon-open:after {
+        position: absolute;
+        left: 10px;
+        content: ' ';
+        height: 20px;
+        width: 2px;
+        background-color: #333;
+      }
+      &.gon-open:before {
+        transform: rotate(45deg);
+        left:5px;
+        height:14px;
+      }
+      &.gon-open:after {
+        transform: rotate(-45deg);
+        left:15px;
+        height:14px;
+      }
+      &.gon-close:before, &.gon-close:after {
+        position: absolute;
+        left: 10px;
+        content: ' ';
+        height: 20px;
+        width: 2px;
+        background-color: #333;
+        transition: all 1s;
+      }
+      &.gon-close:before {
+        transform: rotate(45deg);
+      }
+      &.gon-close:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  #gon-messenger-body{
+    width:280px;
+    background-color:#ffffff;
+    a.powered-by{
+      display:block;
+      font-size:8px;
+      line-height:2em;
+      text-align:center;
+      color:grey;
+    }
+  }
+}
+
+.gon-hide {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+}
